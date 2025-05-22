@@ -7,6 +7,7 @@ app = Ursina()
 # 📏 CONFIGURATION
 MAP_SIZE = 30
 VOID_Y = -10
+keyboard_layout = 'azerty'  # ⌨️ Change à 'qwerty' si tu veux
 
 # ------------------------------
 # TEXTURES
@@ -114,9 +115,21 @@ def restart():
 retry_button.on_click = restart
 
 # ------------------------------
-# UPDATE
+# UPDATE avec gestion QWERTY/AZERTY
 def update():
     if player.y < VOID_Y and player.enabled:
         game_over()
+
+    # Gestion du clavier AZERTY / QWERTY
+    speed = 5 * time.dt
+    if keyboard_layout == 'azerty': #modfie cette ligne 
+        forward = 'z'; back = 's'; left = 'q'; right = 'd'
+    else:
+        forward = 'w'; back = 's'; left = 'a'; right = 'd'
+
+    if held_keys[forward]: player.position += player.forward * speed
+    if held_keys[back]:    player.position -= player.forward * speed
+    if held_keys[left]:    player.position -= player.right * speed
+    if held_keys[right]:   player.position += player.right * speed
 
 app.run()
