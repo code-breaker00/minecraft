@@ -3,7 +3,7 @@ un minecraft open source la v1 qwerty - azerty
 toute version et version de clavier dans les release
 # ceci est un teste merci d attandre les prochaine version
 que fais t'il 
-fonctionnalité	              Toujours présente ?
+fonctionnalité	              Toujours présente ?\n
 Génération de map	            ✅ Oui
 Blocs cassables/posables	    ✅ Oui
 Choix de texture (scroll)	    ✅ Oui
